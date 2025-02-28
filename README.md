@@ -40,6 +40,20 @@ Isso executará todos os testes de performance definidos.
 ## Resultados Esperados
 A expectativa é que o **Snowflake ID** apresente um desempenho superior ao **UUID**, especialmente em cenários de alto throughput, devido à sua implementação baseada em bits e menor complexidade na geração.
 
+## Resultados de Execução
+Exemplo de uma execução local:
+
+```
+main summary:
+Benchmark                                                Mode  Cnt     Score     Error   Units
+SnowflakeIdBenchmark.generateSingleSnowflakeId          thrpt    5  4081,757 ±  13,519  ops/ms
+UuidBenchmark.generateSingleUUID                        thrpt    5  2681,852 ± 155,652  ops/ms
+SnowflakeIdBenchmark.generateBatchSnowflakeIds           avgt    5     0,245 ±   0,001   ms/op
+SnowflakeIdBenchmark.generateBatchSnowflakeIdsParallel   avgt    5     0,449 ±   0,017   ms/op
+UuidBenchmark.generateBatchUUIDs                         avgt    5     0,366 ±   0,012   ms/op
+UuidBenchmark.generateBatchUUIDsParallel                 avgt    5     0,729 ±   0,125   ms/op
+```
+
 ## Utilização do Benchmark
 A utilização do benchmark se deu pela oportunidade de aplicação prática em uma comparação direta e no entendimento da implementação do mesmo utilizando Kotlin.
 
